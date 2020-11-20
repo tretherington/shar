@@ -132,6 +132,9 @@
   <div class="contents col-md-9">
 
 
+<p><a href="https://cran.r-project.org/package=shar"><img src="https://www.r-pkg.org/badges/version/shar" alt="CRAN status"></a> <a href="http://cran.rstudio.com/web/packages/shar/index.html"><img src="http://cranlogs.r-pkg.org/badges/grand-total/shar" alt="CRAN logs"></a></p>
+<p><a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a></p>
+<!-- badges: end -->
 <div id="shar-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#shar-" class="anchor"></a>shar <img src="reference/figures/logo.png" align="right" width="150">
@@ -182,20 +185,22 @@
 <p><img src="reference/figures/README-plot-random_pattern-1.png" style="display: block; margin: auto;"><img src="reference/figures/README-plot-random_pattern-2.png" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/calculate_energy.html">calculate_energy</a></span><span class="op">(</span><span class="va">reconstruction</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">##  randomized_1  randomized_2  randomized_3  randomized_4  randomized_5  randomized_6 </span>
-<span class="co">##    0.01716646    0.02080741    0.02469685    0.02252225    0.01905148    0.02317256 </span>
-<span class="co">##  randomized_7  randomized_8  randomized_9 randomized_10 randomized_11 randomized_12 </span>
-<span class="co">##    0.01467501    0.02009006    0.01796639    0.01742050    0.01967685    0.01531558 </span>
-<span class="co">## randomized_13 randomized_14 randomized_15 randomized_16 randomized_17 randomized_18 </span>
-<span class="co">##    0.01429541    0.02049072    0.01755755    0.01672621    0.01993774    0.01695963 </span>
-<span class="co">## randomized_19 randomized_20 randomized_21 randomized_22 randomized_23 randomized_24 </span>
-<span class="co">##    0.01949814    0.01368794    0.02298234    0.01629161    0.02034008    0.01466430 </span>
-<span class="co">## randomized_25 randomized_26 randomized_27 randomized_28 randomized_29 randomized_30 </span>
-<span class="co">##    0.02274970    0.01857961    0.01489574    0.01694560    0.01860603    0.02151825 </span>
-<span class="co">## randomized_31 randomized_32 randomized_33 randomized_34 randomized_35 randomized_36 </span>
-<span class="co">##    0.01719001    0.01744145    0.01735466    0.01988854    0.02075585    0.02174524 </span>
-<span class="co">## randomized_37 randomized_38 randomized_39 </span>
-<span class="co">##    0.02042854    0.01674873    0.01900174</span></code></pre></div>
+<span class="co">##  randomized_1  randomized_2  randomized_3  randomized_4  randomized_5 </span>
+<span class="co">##    0.01716646    0.02080741    0.02469685    0.02252225    0.01905148 </span>
+<span class="co">##  randomized_6  randomized_7  randomized_8  randomized_9 randomized_10 </span>
+<span class="co">##    0.02317256    0.01467501    0.02009006    0.01796639    0.01742050 </span>
+<span class="co">## randomized_11 randomized_12 randomized_13 randomized_14 randomized_15 </span>
+<span class="co">##    0.01967685    0.01531558    0.01429541    0.02049072    0.01755755 </span>
+<span class="co">## randomized_16 randomized_17 randomized_18 randomized_19 randomized_20 </span>
+<span class="co">##    0.01672621    0.01993774    0.01695963    0.01949814    0.01368794 </span>
+<span class="co">## randomized_21 randomized_22 randomized_23 randomized_24 randomized_25 </span>
+<span class="co">##    0.02298234    0.01629161    0.02034008    0.01466430    0.02274970 </span>
+<span class="co">## randomized_26 randomized_27 randomized_28 randomized_29 randomized_30 </span>
+<span class="co">##    0.01857961    0.01489574    0.01694560    0.01860603    0.02151825 </span>
+<span class="co">## randomized_31 randomized_32 randomized_33 randomized_34 randomized_35 </span>
+<span class="co">##    0.01719001    0.01744145    0.01735466    0.01988854    0.02075585 </span>
+<span class="co">## randomized_36 randomized_37 randomized_38 randomized_39 </span>
+<span class="co">##    0.02174524    0.02042854    0.01674873    0.01900174</span></code></pre></div>
 <p>The data was created that <code>species_a</code> has a negative association to habitat 4 and <code>species_b</code> has a positive association to habitat 5. At one point a positive association to one habitat leads consequently to a negative association to another habitat (and vice versa). All this can be seen in the results.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/results_habitat_association.html">results_habitat_association</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="va">species_a</span>, raster <span class="op">=</span> <span class="va">torus_trans</span><span class="op">)</span>
@@ -248,7 +253,8 @@
 <div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
 <div class="community">
@@ -269,14 +275,10 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/r-spatialecology/shar"><img src="https://travis-ci.org/r-spatialecology/shar.svg?branch=master" alt="Travis build status"></a></li>
-<li><a href="https://ci.appveyor.com/project/mhesselbarth/shar/branch/master"><img src="https://ci.appveyor.com/api/projects/status/08hgwkr82pqb6ykq/branch/master?svg=true" alt="AppVeyor build status"></a></li>
-<li><a href="https://codecov.io/gh/r-spatialecology/shar?branch=master"><img src="https://codecov.io/gh/r-spatialecology/shar/branch/master/graph/badge.svg" alt="Coverage status"></a></li>
 <li><a href="https://www.repostatus.org/#active"><img src="https://www.repostatus.org/badges/latest/active.svg" alt="Project Status"></a></li>
 <li><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
-<li><a href="https://cran.r-project.org/package=shar"><img src="https://www.r-pkg.org/badges/version/shar" alt="CRAN status"></a></li>
-<li><a href="http://cran.rstudio.com/web/packages/shar/index.html"><img src="http://cranlogs.r-pkg.org/badges/grand-total/shar" alt="CRAN logs"></a></li>
-<li><a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a></li>
+<li><a href="https://github.com/r-spatialecology/shar/actions"><img src="https://github.com/r-spatialecology/shar/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://codecov.io/gh/r-spatialecology/shar?branch=master"><img src="https://codecov.io/gh/r-spatialecology/shar/branch/master/graph/badge.svg" alt="Coverage status"></a></li>
 </ul>
 </div>
 </div>
