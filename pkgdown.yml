@@ -1,0 +1,10 @@
+pandoc: 2.7.3
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  articles/background: background.html
+  articles/publication_record: publication_record.html
+  articles/reconstruct_multiple_patterns: reconstruct_multiple_patterns.html
+  get_started: get_started.html
+last_built: 2020-11-20T14:54Z
+
