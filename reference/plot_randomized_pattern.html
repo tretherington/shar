@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">shar | Species-habitat associations in R</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2</span>
       </span>
     </div>
 
@@ -232,9 +232,9 @@ possible to plot 3 randomized patterns and the observed pattern using <code>what
 <span class='fu'>plot_randomized_pattern</span><span class='op'>(</span><span class='va'>pattern_random</span>, what <span class='op'>=</span> <span class='st'>"pp"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span class='message'>&gt; Plotting observed pattern and 4 randomized patterns only</span></div><div class='img'><img src='plot_randomized_pattern-3.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='va'>marks_sub</span> <span class='op'>&lt;-</span> <span class='fu'>spatstat</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/spatstat/man/subset.ppp.html'>subset.ppp</a></span><span class='op'>(</span><span class='va'>species_a</span>, select <span class='op'>=</span> <span class='va'>dbh</span><span class='op'>)</span>
-<span class='va'>marks_recon</span> <span class='op'>&lt;-</span> <span class='fu'><a href='reconstruct_pattern_marks.html'>reconstruct_pattern_marks</a></span><span class='op'>(</span><span class='va'>pattern_random</span><span class='op'>$</span><span class='va'>randomized</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span>, <span class='va'>marks_sub</span>,
-n_random <span class='op'>=</span> <span class='fl'>19</span>, max_runs <span class='op'>=</span> <span class='fl'>1000</span><span class='op'>)</span>
+<span class='va'>marks_sub</span> <span class='op'>&lt;-</span> <span class='fu'>spatstat.geom</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/spatstat.geom/man/subset.ppp.html'>subset.ppp</a></span><span class='op'>(</span><span class='va'>species_a</span>, select <span class='op'>=</span> <span class='va'>dbh</span><span class='op'>)</span>
+<span class='va'>marks_recon</span> <span class='op'>&lt;-</span> <span class='fu'><a href='reconstruct_pattern_marks.html'>reconstruct_pattern_marks</a></span><span class='op'>(</span><span class='va'>pattern_random</span><span class='op'>$</span><span class='va'>randomized</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span>,
+<span class='va'>marks_sub</span>, n_random <span class='op'>=</span> <span class='fl'>19</span>, max_runs <span class='op'>=</span> <span class='fl'>1000</span><span class='op'>)</span>
 <span class='fu'>plot_randomized_pattern</span><span class='op'>(</span><span class='va'>marks_recon</span><span class='op'>)</span>
 <span class='op'>}</span>
 

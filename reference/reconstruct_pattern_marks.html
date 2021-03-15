@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">shar | Species-habitat associations in R</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2</span>
       </span>
     </div>
 
@@ -277,7 +277,7 @@ in ecology. Boca Raton: Chapman and Hall/CRC Press.</p>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='va'>pattern_recon</span> <span class='op'>&lt;-</span> <span class='fu'><a href='reconstruct_pattern_homo.html'>reconstruct_pattern_homo</a></span><span class='op'>(</span><span class='va'>species_a</span>, n_random <span class='op'>=</span> <span class='fl'>1</span>, max_runs <span class='op'>=</span> <span class='fl'>1000</span>,
 simplify <span class='op'>=</span> <span class='cn'>TRUE</span>, return_input <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-<span class='va'>marks_sub</span> <span class='op'>&lt;-</span> <span class='fu'>spatstat</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/spatstat/man/subset.ppp.html'>subset.ppp</a></span><span class='op'>(</span><span class='va'>species_a</span>, select <span class='op'>=</span> <span class='va'>dbh</span><span class='op'>)</span>
+<span class='va'>marks_sub</span> <span class='op'>&lt;-</span> <span class='fu'>spatstat.geom</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/spatstat.geom/man/subset.ppp.html'>subset.ppp</a></span><span class='op'>(</span><span class='va'>species_a</span>, select <span class='op'>=</span> <span class='va'>dbh</span><span class='op'>)</span>
 <span class='va'>marks_recon</span> <span class='op'>&lt;-</span> <span class='fu'>reconstruct_pattern_marks</span><span class='op'>(</span><span class='va'>pattern_recon</span>, <span class='va'>marks_sub</span>, n_random <span class='op'>=</span> <span class='fl'>19</span>, max_runs <span class='op'>=</span> <span class='fl'>1000</span><span class='op'>)</span>
 <span class='op'>}</span>
 

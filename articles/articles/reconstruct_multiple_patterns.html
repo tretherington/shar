@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../../index.html">shar | Species-habitat associations in R</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2</span>
       </span>
     </div>
 
@@ -128,7 +128,7 @@
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>How to reconstruct multiple patterns</h1>
             
-            <h4 class="date">2021-02-12</h4>
+            <h4 class="date">2021-03-15</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/r-spatialecology/shar/blob/master/vignettes/articles/reconstruct_multiple_patterns.Rmd"><code>vignettes/articles/reconstruct_multiple_patterns.Rmd</code></a></small>
       <div class="hidden name"><code>reconstruct_multiple_patterns.Rmd</code></div>
@@ -141,7 +141,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># library(tidyverse)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatialecology.github.io/shar">shar</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.spatstat.org">spatstat</a></span><span class="op">)</span></code></pre></div>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://spatstat.org/">spatstat</a></span><span class="op">)</span></code></pre></div>
 <p>In case you want to only create the spatial characteristics, this is straightforward using <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># create list with patterns</span>
@@ -159,11 +159,11 @@
                                             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## [[1]]
 ## randomized_1 randomized_2 randomized_3 
-##    0.1108078    0.1185977    0.1244734 
+##   0.09777494   0.10689210   0.09536631 
 ## 
 ## [[2]]
 ## randomized_1 randomized_2 randomized_3 
-##    0.2526158    0.2484319    0.2414963</code></pre>
+##    0.2515232    0.2514138    0.2502324</code></pre>
 <p>Another possible would be to first reconstruct <em>n</em> times the spatial characteristics and afterwards reconstruct the marks <em>m</em> times for each of the <em>n</em> spatial reconstructions.</p>
 <p>Firstly, reconstruct only the spatial characteristics <em>n</em> times. The observed pattern is not needed in this case, so you can put <code>return_input = FALSE</code>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
@@ -176,7 +176,7 @@
 <p>Secondly, to reconstruct the (numeric) marks of the observed pattern for each of the spatially reconstructed patterns, just use <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> in combination with <code><a href="../../reference/reconstruct_pattern_marks.html">reconstruct_pattern_marks()</a></code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># get only selected marks of input (numeric marks)</span>
-<span class="va">species_a_marks</span> <span class="op">&lt;-</span> <span class="fu">spatstat</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/spatstat/man/subset.ppp.html">subset.ppp</a></span><span class="op">(</span><span class="va">species_a</span>, select <span class="op">=</span> <span class="va">dbh</span><span class="op">)</span>
+<span class="va">species_a_marks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/subset.html">subset</a></span><span class="op">(</span><span class="va">species_a</span>, select <span class="op">=</span> <span class="va">dbh</span><span class="op">)</span>
 
 <span class="co"># reconstruct marks 3 times for each input pattern</span>
 <span class="va">result_marks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">reconstructed_pattern</span><span class="op">$</span><span class="va">randomized</span>, 
@@ -191,15 +191,15 @@
                                                   verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## $randomized_1
 ## randomized_1 randomized_2 randomized_3 
-##   0.11671917   0.09674576   0.12330528 
+##   0.09356577   0.09765834   0.11566539 
 ## 
 ## $randomized_2
 ## randomized_1 randomized_2 randomized_3 
-##    0.1292868    0.1295473    0.1639720 
+##    0.1202889    0.1693614    0.1269758 
 ## 
 ## $randomized_3
 ## randomized_1 randomized_2 randomized_3 
-##    0.1181886    0.1085549    0.1226725</code></pre>
+##    0.1092847    0.1171196    0.1181042</code></pre>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
