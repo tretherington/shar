@@ -140,7 +140,7 @@
 <p>In case you want to reconstruct several patterns at once (e.g. for different points in time if repeated censuses are available), you can use the following code. Please be aware that the maximum number of iterations was set to <code>max_runs = 10</code> to keep the computational time low for this example. For an applied case, this value should be increased.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># library(tidyverse)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatialecology.github.io/shar">shar</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatialecology.github.io/shar/">shar</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://spatstat.org/">spatstat</a></span><span class="op">)</span></code></pre></div>
 <p>In case you want to only create the spatial characteristics, this is straightforward using <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -159,11 +159,11 @@
                                             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## [[1]]
 ## randomized_1 randomized_2 randomized_3 
-##   0.10236130   0.09179880   0.08999036 
+##   0.09374822   0.08942468   0.09188380 
 ## 
 ## [[2]]
 ## randomized_1 randomized_2 randomized_3 
-##    0.2598927    0.2638830    0.2638534</code></pre>
+##    0.2633725    0.2617335    0.2675971</code></pre>
 <p>Another possible would be to first reconstruct <em>n</em> times the spatial characteristics and afterwards reconstruct the marks <em>m</em> times for each of the <em>n</em> spatial reconstructions.</p>
 <p>Firstly, reconstruct only the spatial characteristics <em>n</em> times. The observed pattern is not needed in this case, so you can put <code>return_input = FALSE</code>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
@@ -191,15 +191,15 @@
                                                   verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## $randomized_1
 ## randomized_1 randomized_2 randomized_3 
-##    0.1139924    0.1112629    0.1090557 
+##   0.10264741   0.06292093   0.09362937 
 ## 
 ## $randomized_2
 ## randomized_1 randomized_2 randomized_3 
-##   0.08320216   0.11681076   0.11892929 
+##   0.07079247   0.07064650   0.06829083 
 ## 
 ## $randomized_3
 ## randomized_1 randomized_2 randomized_3 
-##   0.08073659   0.07823478   0.07878760</code></pre>
+##   0.10000850   0.12171084   0.05908419</code></pre>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
