@@ -185,7 +185,7 @@
   no_change <span class='op'>=</span> <span class='cn'>Inf</span>,
   annealing <span class='op'>=</span> <span class='fl'>0.01</span>,
   n_points <span class='op'>=</span> <span class='cn'>NULL</span>,
-  extent <span class='op'>=</span> <span class='cn'>NULL</span>,
+  window <span class='op'>=</span> <span class='cn'>NULL</span>,
   comp_fast <span class='op'>=</span> <span class='fl'>1000</span>,
   weights <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.5</span>, <span class='fl'>0.5</span><span class='op'>)</span>,
   r_length <span class='op'>=</span> <span class='fl'>250</span>,
@@ -227,6 +227,10 @@
       <td><p>Number of points to be simulated.</p></td>
     </tr>
     <tr>
+      <th>window</th>
+      <td><p>Window of simulated pattern.</p></td>
+    </tr>
+    <tr>
       <th>comp_fast</th>
       <td><p>If pattern contains more points than threshold, summary functions are estimated in a computational fast way.</p></td>
     </tr>
@@ -254,10 +258,6 @@
       <th>plot</th>
       <td><p>Plot pcf function during optimization.</p></td>
     </tr>
-    <tr>
-      <th>window</th>
-      <td><p>Window of simulated pattern.</p></td>
-    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -277,8 +277,8 @@ time. For more information see <code><a href='estimate_pcf_fast.html'>estimate_p
 <p>The reconstruction can be stopped automatically if for n steps the energy does not
 decrease. The number of steps can be controlled by <code>no_change</code> and is set to
 <code>no_change = Inf</code> as default to never stop automatically.</p>
-<p>If <code>n_points</code> and <code>extent</code> are not specified (default), the simulated pattern
-has the same number of points and extent as the input pattern.</p>
+<p>If <code>n_points</code> and <code>window</code> are not specified (default), the simulated pattern
+has the same number of points and window as the input pattern.</p>
 <p>The weights must be 0 &lt; sum(weights) &lt;= 1. To weight both summary functions identical,
 use <code>weights = c(0.5, 0.5)</code>.</p>
 <p><code>spatstat</code> sets <code>r_length</code> to 513 by default. However, a lower value decreases
