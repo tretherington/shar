@@ -163,11 +163,11 @@
                                             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## [[1]]
 ## randomized_1 randomized_2 randomized_3 
-##    0.1074212    0.1067096    0.1114765 
+##   0.09893874   0.10177944   0.09109225 
 ## 
 ## [[2]]
 ## randomized_1 randomized_2 randomized_3 
-##    0.2698038    0.2702865    0.2687175</code></pre>
+##    0.2708987    0.2744141    0.2740211</code></pre>
 <p>Another possible would be to first reconstruct <em>n</em> times the spatial characteristics and afterwards reconstruct the marks <em>m</em> times for each of the <em>n</em> spatial reconstructions.</p>
 <p>Firstly, reconstruct only the spatial characteristics <em>n</em> times. The observed pattern is not needed in this case, so you can put <code>return_input = FALSE</code>.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
@@ -197,15 +197,15 @@
                                                   verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## $randomized_1
 ## randomized_1 randomized_2 randomized_3 
-##    0.1106897    0.1196448    0.1134868 
+##    0.1298406    0.1133418    0.1285495 
 ## 
 ## $randomized_2
 ## randomized_1 randomized_2 randomized_3 
-##   0.10188703   0.10075464   0.09031752 
+##   0.09917166   0.09659299   0.10702008 
 ## 
 ## $randomized_3
 ## randomized_1 randomized_2 randomized_3 
-##   0.05340334   0.04717214   0.03914368</code></pre>
+##   0.09415947   0.11627976   0.11047985</code></pre>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
