@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../../index.html">shar | Species-habitat associations in R</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.1</span>
       </span>
     </div>
 
@@ -128,7 +128,7 @@
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>How to reconstruct multiple patterns</h1>
             
-            <h4 class="date">2021-03-15</h4>
+            <h4 class="date">2021-05-04</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/r-spatialecology/shar/blob/master/vignettes/articles/reconstruct_multiple_patterns.Rmd"><code>vignettes/articles/reconstruct_multiple_patterns.Rmd</code></a></small>
       <div class="hidden name"><code>reconstruct_multiple_patterns.Rmd</code></div>
@@ -152,29 +152,35 @@
                                                                     n_random <span class="op">=</span> <span class="fl">3</span>, 
                                                                     max_runs <span class="op">=</span> <span class="fl">10</span>,
                                                                     verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<pre><code>## &gt; Using number of points 'pattern'.</code></pre>
+<pre><code>## &gt; Using window of 'pattern'.</code></pre>
+<pre><code>## &gt; Using number of points 'pattern'.</code></pre>
+<pre><code>## &gt; Using window of 'pattern'.</code></pre>
 <p>The result will be a nested list including all <em>m</em> randomization (including the observed pattern) of the <em>n</em> provided input patterns.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># get mean energy</span>
 <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">result</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="../../reference/calculate_energy.html">calculate_energy</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="va">x</span>,
                                             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## [[1]]
 ## randomized_1 randomized_2 randomized_3 
-##   0.09374822   0.08942468   0.09188380 
+##   0.07595610   0.08214724   0.08342559 
 ## 
 ## [[2]]
 ## randomized_1 randomized_2 randomized_3 
-##    0.2633725    0.2617335    0.2675971</code></pre>
+##    0.2468705    0.2484432    0.2441768</code></pre>
 <p>Another possible would be to first reconstruct <em>n</em> times the spatial characteristics and afterwards reconstruct the marks <em>m</em> times for each of the <em>n</em> spatial reconstructions.</p>
 <p>Firstly, reconstruct only the spatial characteristics <em>n</em> times. The observed pattern is not needed in this case, so you can put <code>return_input = FALSE</code>.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># reconstruct spatial strucutre</span>
 <span class="va">reconstructed_pattern</span> <span class="op">&lt;-</span> <span class="fu"><a href="../../reference/reconstruct_pattern_homo.html">reconstruct_pattern_homo</a></span><span class="op">(</span><span class="va">species_a</span>, 
                                                   n_random <span class="op">=</span> <span class="fl">3</span>, 
                                                   max_runs <span class="op">=</span> <span class="fl">10</span>,
                                                   return_input <span class="op">=</span> <span class="cn">FALSE</span>,
                                                   verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<pre><code>## &gt; Using number of points 'pattern'.</code></pre>
+<pre><code>## &gt; Using window of 'pattern'.</code></pre>
 <p>Secondly, to reconstruct the (numeric) marks of the observed pattern for each of the spatially reconstructed patterns, just use <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> in combination with <code><a href="../../reference/reconstruct_pattern_marks.html">reconstruct_pattern_marks()</a></code>.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># get only selected marks of input (numeric marks)</span>
 <span class="va">species_a_marks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/subset.html">subset</a></span><span class="op">(</span><span class="va">species_a</span>, select <span class="op">=</span> <span class="va">dbh</span><span class="op">)</span>
 
@@ -185,21 +191,21 @@
                                                              max_runs <span class="op">=</span> <span class="fl">10</span>,
                                                              n_random <span class="op">=</span> <span class="fl">3</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>Again, the result is a nested list with the same dimensions as provided input patterns and reconstructions.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># get energy</span>
 <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">result_marks</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="../../reference/calculate_energy.html">calculate_energy</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="va">x</span>, 
                                                   verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## $randomized_1
 ## randomized_1 randomized_2 randomized_3 
-##   0.10264741   0.06292093   0.09362937 
+##   0.09339081   0.08980995   0.10059452 
 ## 
 ## $randomized_2
 ## randomized_1 randomized_2 randomized_3 
-##   0.07079247   0.07064650   0.06829083 
+##    0.1222164    0.1424844    0.1294787 
 ## 
 ## $randomized_3
 ## randomized_1 randomized_2 randomized_3 
-##   0.10000850   0.12171084   0.05908419</code></pre>
+##   0.10787119   0.12114140   0.09857761</code></pre>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
