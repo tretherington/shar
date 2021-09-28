@@ -46,21 +46,21 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../../articles/get_started.html">
-    <span class="fa fa fa fa-magic"></span>
+    <span class="fa fa-magic"></span>
      
     Get Started
   </a>
 </li>
 <li>
   <a href="../../reference/index.html">
-    <span class="fas fa-gears"></span>
+    <span class="fa fa-gears"></span>
      
     Functions
   </a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fas fa-graduation-cap"></span>
+    <span class="fa fa-graduation-cap"></span>
      
     More
      
@@ -69,21 +69,21 @@
   <ul class="dropdown-menu" role="menu">
 <li>
       <a href="../../articles/articles/background.html">
-        <span class="fas fa-book"></span>
+        <span class="fa fa-book"></span>
          
         General Background
       </a>
     </li>
     <li>
       <a href="../../articles/articles/reconstruct_multiple_patterns.html">
-        <span class="fas fa-book"></span>
+        <span class="fa fa-book"></span>
          
         Reconstruct multiple pattern
       </a>
     </li>
     <li>
       <a href="../../articles/articles/publication_record.html">
-        <span class="fas fa-file-text-o"></span>
+        <span class="fa fa-file-text-o"></span>
          
         Publication Record
       </a>
@@ -94,21 +94,21 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="../../news/index.html">
-    <span class="fas fa-newspaper-o"></span>
+    <span class="fa fa-newspaper-o"></span>
      
     News
   </a>
 </li>
 <li>
   <a href="https://github.com/r-spatialecology/shar">
-    <span class="fas fa-github fa-lg"></span>
+    <span class="fa fa-github fa-lg"></span>
      
     Github
   </a>
 </li>
 <li>
   <a href="https://mhesselbarth.rbind.io">
-    <span class="fas fa-user"></span>
+    <span class="fa fa-user"></span>
      
     Contact
   </a>
@@ -128,7 +128,7 @@
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>How to reconstruct multiple patterns</h1>
             
-            <h4 class="date">2021-05-04</h4>
+            <h4 class="date">2021-09-28</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/r-spatialecology/shar/blob/master/vignettes/articles/reconstruct_multiple_patterns.Rmd"><code>vignettes/articles/reconstruct_multiple_patterns.Rmd</code></a></small>
       <div class="hidden name"><code>reconstruct_multiple_patterns.Rmd</code></div>
@@ -163,11 +163,11 @@
                                             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## [[1]]
 ## randomized_1 randomized_2 randomized_3 
-##   0.09893874   0.10177944   0.09109225 
+##   0.10336992   0.09579178   0.09778587 
 ## 
 ## [[2]]
 ## randomized_1 randomized_2 randomized_3 
-##    0.2708987    0.2744141    0.2740211</code></pre>
+##    0.2586783    0.2504219    0.2541902</code></pre>
 <p>Another possible would be to first reconstruct <em>n</em> times the spatial characteristics and afterwards reconstruct the marks <em>m</em> times for each of the <em>n</em> spatial reconstructions.</p>
 <p>Firstly, reconstruct only the spatial characteristics <em>n</em> times. The observed pattern is not needed in this case, so you can put <code>return_input = FALSE</code>.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
@@ -197,15 +197,15 @@
                                                   verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## $randomized_1
 ## randomized_1 randomized_2 randomized_3 
-##    0.1298406    0.1133418    0.1285495 
+##    0.1001422    0.1115741    0.1010318 
 ## 
 ## $randomized_2
 ## randomized_1 randomized_2 randomized_3 
-##   0.09917166   0.09659299   0.10702008 
+##   0.08759659   0.09867088   0.10661195 
 ## 
 ## $randomized_3
 ## randomized_1 randomized_2 randomized_3 
-##   0.09415947   0.11627976   0.11047985</code></pre>
+##    0.1204252    0.1172464    0.1118012</code></pre>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
