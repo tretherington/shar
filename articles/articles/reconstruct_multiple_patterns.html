@@ -128,7 +128,7 @@
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>How to reconstruct multiple patterns</h1>
             
-            <h4 class="date">2021-09-28</h4>
+            <h4 class="date">2021-09-29</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/r-spatialecology/shar/blob/master/vignettes/articles/reconstruct_multiple_patterns.Rmd"><code>vignettes/articles/reconstruct_multiple_patterns.Rmd</code></a></small>
       <div class="hidden name"><code>reconstruct_multiple_patterns.Rmd</code></div>
@@ -163,11 +163,11 @@
                                             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## [[1]]
 ## randomized_1 randomized_2 randomized_3 
-##   0.10336992   0.09579178   0.09778587 
+##   0.09373418   0.09433076   0.09248179 
 ## 
 ## [[2]]
 ## randomized_1 randomized_2 randomized_3 
-##    0.2586783    0.2504219    0.2541902</code></pre>
+##    0.2445823    0.2450412    0.2494588</code></pre>
 <p>Another possible would be to first reconstruct <em>n</em> times the spatial characteristics and afterwards reconstruct the marks <em>m</em> times for each of the <em>n</em> spatial reconstructions.</p>
 <p>Firstly, reconstruct only the spatial characteristics <em>n</em> times. The observed pattern is not needed in this case, so you can put <code>return_input = FALSE</code>.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
@@ -197,15 +197,15 @@
                                                   verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## $randomized_1
 ## randomized_1 randomized_2 randomized_3 
-##    0.1001422    0.1115741    0.1010318 
+##    0.1151260    0.1069677    0.1220730 
 ## 
 ## $randomized_2
 ## randomized_1 randomized_2 randomized_3 
-##   0.08759659   0.09867088   0.10661195 
+##    0.1166914    0.1057659    0.1064612 
 ## 
 ## $randomized_3
 ## randomized_1 randomized_2 randomized_3 
-##    0.1204252    0.1172464    0.1118012</code></pre>
+##    0.1384256    0.1441294    0.1472335</code></pre>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
