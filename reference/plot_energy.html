@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>plot_energy — plot_energy • shar | Species-habitat associations in R</title>
+<title>plot_energy — plot_energy • shar</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -19,7 +19,7 @@
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
@@ -79,25 +79,25 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">shar | Species-habitat associations in R</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.1</span>
+        <a class="navbar-link" href="../index.html">shar</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../articles/get_started.html">
-    <span class="fa fa-magic"></span>
-     
-    Get Started
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">
     <span class="fa fa-gears"></span>
      
     Functions
+  </a>
+</li>
+<li>
+  <a href="../articles/get_started.html">
+    <span class="fa fa-magic"></span>
+     
+    Get Started
   </a>
 </li>
 <li class="dropdown">
@@ -184,18 +184,23 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>pattern</th>
-      <td><p>List with reconstructed patterns.</p></td>
+      <td><p>rd_pat or rd_mar object with randomized patterns.</p></td>
     </tr>
     <tr>
       <th>col</th>
-      <td><p>Vector with colors. Must be as long as n_random.</p></td>
+      <td><p>Vector with colors. Must be the same length as <code>n_random</code>.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>void</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The function plots the decrease of the energy over time, i.e. the iterations.
-This can help to identify if enough max_runs where chosen for the reconstruction.</p>
+This can help to identify if the chosen <code>max_runs</code> for the reconstruction
+were sufficient. The <code>pattern</code> object must have been created using
+<code>reconstruct_pattern_*</code> .</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='calculate_energy.html'>calculate_energy</a></code> <br />

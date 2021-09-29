@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>reconstruct_pattern_hetero — reconstruct_pattern_hetero • shar | Species-habitat associations in R</title>
+<title>reconstruct_pattern_hetero — reconstruct_pattern_hetero • shar</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -19,7 +19,7 @@
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="reconstruct_pattern_hetero — reconstruct_pattern_hetero" />
-<meta property="og:description" content="Pattern reconstruction for heterogenous patterns" />
+<meta property="og:description" content="Pattern reconstruction for heterogeneous patterns" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -79,25 +79,25 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">shar | Species-habitat associations in R</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.1</span>
+        <a class="navbar-link" href="../index.html">shar</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../articles/get_started.html">
-    <span class="fa fa-magic"></span>
-     
-    Get Started
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">
     <span class="fa fa-gears"></span>
      
     Functions
+  </a>
+</li>
+<li>
+  <a href="../articles/get_started.html">
+    <span class="fa fa-magic"></span>
+     
+    Get Started
   </a>
 </li>
 <li class="dropdown">
@@ -174,7 +174,7 @@
     </div>
 
     <div class="ref-description">
-    <p>Pattern reconstruction for heterogenous patterns</p>
+    <p>Pattern reconstruction for heterogeneous patterns</p>
     </div>
 
     <pre class="usage"><span class='fu'>reconstruct_pattern_hetero</span><span class='op'>(</span>
@@ -198,66 +198,73 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>pattern</th>
-      <td><p>ppp.</p></td>
+      <td><p>ppp object with pattern.</p></td>
     </tr>
     <tr>
       <th>n_random</th>
-      <td><p>Number of randomizations.</p></td>
+      <td><p>Integer with number of randomizations.</p></td>
     </tr>
     <tr>
       <th>e_threshold</th>
-      <td><p>Minimum energy to stop reconstruction.</p></td>
+      <td><p>Double with minimum energy to stop reconstruction.</p></td>
     </tr>
     <tr>
       <th>max_runs</th>
-      <td><p>Maximum number of iterations of e_threshold is not reached.</p></td>
+      <td><p>Integer with maximum number of iterations if <code>e_threshold</code>
+is not reached.</p></td>
     </tr>
     <tr>
       <th>no_change</th>
-      <td><p>Reconstrucction will stop if energy does not decrease for this number of iterations.</p></td>
+      <td><p>Integer with number of iterations at which the reconstruction will
+stop if the energy does not decrease.</p></td>
     </tr>
     <tr>
       <th>annealing</th>
-      <td><p>Probability to keep relocated point even if energy did not decrease.</p></td>
+      <td><p>Double with probability to keep relocated point even if energy
+did not decrease.</p></td>
     </tr>
     <tr>
       <th>comp_fast</th>
-      <td><p>If pattern contains more points than threshold, summary functions are estimated in a computational fast way.</p></td>
+      <td><p>Integer with threshold at which summary functions are estimated
+in a computational fast way.</p></td>
     </tr>
     <tr>
       <th>weights</th>
-      <td><p>Weights used to calculate energy. The first number refers to Gest(r), the second number to pcf(r).</p></td>
+      <td><p>Vector with weights used to calculate energy.
+The first number refers to Gest(r), the second number to pcf(r).</p></td>
     </tr>
     <tr>
       <th>r_length</th>
-      <td><p>Number of intervals from r = 0 to r = rmax the summary functions are evaluated.</p></td>
+      <td><p>Integer with number of intervals from <code>r = 0</code> to <code>r = rmax</code> for which
+the summary functions are evaluated.</p></td>
     </tr>
     <tr>
       <th>return_input</th>
-      <td><p>The original input data is returned as last list entry</p></td>
+      <td><p>Logical if the original input data is returned.</p></td>
     </tr>
     <tr>
       <th>simplify</th>
-      <td><p>If n_random = 1 and return_input = FALSE only pattern will be returned.</p></td>
+      <td><p>Logical if only pattern will be returned if <code>n_random = 1</code>
+and <code>return_input = FALSE</code>.</p></td>
     </tr>
     <tr>
       <th>verbose</th>
-      <td><p>Print progress report.</p></td>
+      <td><p>Logical if progress report is printed.</p></td>
     </tr>
     <tr>
       <th>plot</th>
-      <td><p>Plot pcf function during optimization.</p></td>
+      <td><p>Logical if pcf(r) function is plotted and updated during optimization.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list</p>
+    <p>rd_pat</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The functions randomizes the observed pattern by using pattern reconstruction
 as described in Tscheschel &amp; Stoyan (2006) and Wiegand &amp; Moloney (2014). The
-algorithm starts with a random but heterogenous pattern, shifts a
+algorithm starts with a random but heterogeneous pattern, shifts a
 point to a new location and keeps the change only, if the deviation between the
 observed and the reconstructed pattern decreases. The pair correlation function
 and the nearest neighbour distance function are used to describe the patterns.</p>
