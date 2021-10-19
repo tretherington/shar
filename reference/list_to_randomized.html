@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>shar — shar • shar</title>
+<title>list_to_randomized — list_to_randomized • shar</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,12 +46,8 @@
 
 
 
-<meta property="og:title" content="shar — shar" />
-<meta property="og:description" content="Analyse species-habitat associations in R. Therefore, information about the
-location of the species is needed and about the environmental conditions. To test
-for significance habitat associations, one of the two components is randomized.
-Methods are mainly based on Plotkin et al. (2000) &amp;lt;doi:10.1006/jtbi.2000.2158&amp;gt; and
-Harms et al. (2001) &amp;lt;doi:10.1111/j.1365-2745.2001.00615.x&amp;gt;." />
+<meta property="og:title" content="list_to_randomized — list_to_randomized" />
+<meta property="og:description" content="Convert list to rd_* object." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -179,38 +175,56 @@ Harms et al. (2001) &amp;lt;doi:10.1111/j.1365-2745.2001.00615.x&amp;gt;." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>shar</h1>
-    <small class="dont-index">Source: <a href='https://github.com/r-spatialecology/shar/blob/master/R/SHAR.R'><code>R/SHAR.R</code></a></small>
-    <div class="hidden name"><code>shar.Rd</code></div>
+    <h1>list_to_randomized</h1>
+    <small class="dont-index">Source: <a href='https://github.com/r-spatialecology/shar/blob/master/R/list_to_randomized.R'><code>R/list_to_randomized.R</code></a></small>
+    <div class="hidden name"><code>list_to_randomized.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Analyse species-habitat associations in R. Therefore, information about the
-location of the species is needed and about the environmental conditions. To test
-for significance habitat associations, one of the two components is randomized.
-Methods are mainly based on Plotkin et al. (2000) &lt;doi:10.1006/jtbi.2000.2158&gt; and
-Harms et al. (2001) &lt;doi:10.1111/j.1365-2745.2001.00615.x&gt;.</p>
+    <p>Convert list to rd_* object.</p>
     </div>
 
+    <pre class="usage"><span class='fu'>list_to_randomized</span><span class='op'>(</span><span class='va'>list</span>, observed <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>list</th>
+      <td><p>List</p></td>
+    </tr>
+    <tr>
+      <th>observed</th>
+      <td><p>Observed</p></td>
+    </tr>
+    </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>rd_pat, rd_ras</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Convert list of randomized point pattern or raster layer to a rd_* object that
+can be used with all functions of the package. The main purpose of this utility function
+is to allow an easy parallelization of the randomization approach.</p>
+<p>For more information, please see the "Parallelization" article.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Useful links:</p><ul>
-<li><p><a href='https://r-spatialecology.github.io/shar/'>https://r-spatialecology.github.io/shar/</a></p></li>
-<li><p>Report bugs at <a href='https://github.com/r-spatialecology/shar/issues/'>https://github.com/r-spatialecology/shar/issues/</a></p></li>
-</ul>
+    <div class='dont-index'><p><code><a href='randomize_raster.html'>randomize_raster</a></code> <br />
+<code><a href='translate_raster.html'>translate_raster</a></code> <br />
+<code><a href='reconstruct_pattern_homo.html'>reconstruct_pattern_homo</a></code> <br />
+<code><a href='reconstruct_pattern_hetero.html'>reconstruct_pattern_hetero</a></code> <br />
+<code><a href='reconstruct_pattern_cluster.html'>reconstruct_pattern_cluster</a></code></p></div>
 
-</div>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>fit_list</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span>X <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>39</span>, FUN <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>i</span><span class='op'>)</span> <span class='op'>{</span><span class='fu'><a href='fit_point_process.html'>fit_point_process</a></span><span class='op'>(</span>pattern <span class='op'>=</span> <span class='va'>species_a</span>,
+n_random <span class='op'>=</span> <span class='fl'>1</span>, simplify <span class='op'>=</span> <span class='cn'>TRUE</span>, return_input <span class='op'>=</span> <span class='cn'>FALSE</span>, verbose <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>}</span><span class='op'>)</span>
 
-    <p><strong>Maintainer</strong>: Maximillian H.K. Hesselbarth <a href='mailto:mhk.hesselbarth@gmail.com'>mhk.hesselbarth@gmail.com</a> (<a href='https://orcid.org/0000-0003-1125-9918'>ORCID</a>)</p>
-<p>Authors:</p><ul>
-<li><p>Marco Sciaini <a href='mailto:sciaini.marco@gmail.com'>sciaini.marco@gmail.com</a> (<a href='https://orcid.org/0000-0002-3042-5435'>ORCID</a>)</p></li>
-</ul>
+<span class='fu'>list_to_randomized</span><span class='op'>(</span>list <span class='op'>=</span> <span class='va'>fit_list</span>, observed <span class='op'>=</span> <span class='va'>species_a</span><span class='op'>)</span>
+<span class='op'>}</span>
 
-
-
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

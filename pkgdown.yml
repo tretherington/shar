@@ -3,8 +3,9 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   articles/background: background.html
+  articles/parallelization: parallelization.html
   articles/publication_record: publication_record.html
   articles/reconstruct_multiple_patterns: reconstruct_multiple_patterns.html
   get_started: get_started.html
-last_built: 2021-09-29T20:03Z
+last_built: 2021-10-19T13:26Z
 

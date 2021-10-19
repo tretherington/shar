@@ -82,6 +82,13 @@
       </a>
     </li>
     <li>
+      <a href="../../articles/articles/parallelization.html">
+        <span class="fa fa-book"></span>
+         
+        Parallelization
+      </a>
+    </li>
+    <li>
       <a href="../../articles/articles/publication_record.html">
         <span class="fa fa-file-text-o"></span>
          
@@ -128,7 +135,7 @@
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>How to reconstruct multiple patterns</h1>
             
-            <h4 class="date">2021-09-29</h4>
+            <h4 class="date">2021-10-19</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/r-spatialecology/shar/blob/master/vignettes/articles/reconstruct_multiple_patterns.Rmd"><code>vignettes/articles/reconstruct_multiple_patterns.Rmd</code></a></small>
       <div class="hidden name"><code>reconstruct_multiple_patterns.Rmd</code></div>
@@ -139,8 +146,7 @@
     
 <p>In case you want to reconstruct several patterns at once (e.g. for different points in time if repeated censuses are available), you can use the following code. Please be aware that the maximum number of iterations was set to <code>max_runs = 10</code> to keep the computational time low for this example. For an applied case, this value should be increased.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># library(tidyverse)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatialecology.github.io/shar/">shar</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatialecology.github.io/shar/">shar</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://spatstat.org/">spatstat</a></span><span class="op">)</span></code></pre></div>
 <p>In case you want to only create the spatial characteristics, this is straightforward using <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -163,11 +169,11 @@
                                             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## [[1]]
 ## randomized_1 randomized_2 randomized_3 
-##   0.08499520   0.08916527   0.09269653 
+##   0.10564704   0.11801491   0.09312056 
 ## 
 ## [[2]]
 ## randomized_1 randomized_2 randomized_3 
-##    0.2753382    0.2798580    0.2748722</code></pre>
+##    0.2805387    0.2835635    0.2748663</code></pre>
 <p>Another possible would be to first reconstruct <em>n</em> times the spatial characteristics and afterwards reconstruct the marks <em>m</em> times for each of the <em>n</em> spatial reconstructions.</p>
 <p>Firstly, reconstruct only the spatial characteristics <em>n</em> times. The observed pattern is not needed in this case, so you can put <code>return_input = FALSE</code>.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
@@ -197,15 +203,15 @@
                                                   verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## $randomized_1
 ## randomized_1 randomized_2 randomized_3 
-##   0.09788686   0.08227889   0.12030319 
+##   0.07463509   0.08137046   0.08217063 
 ## 
 ## $randomized_2
 ## randomized_1 randomized_2 randomized_3 
-##   0.13702703   0.10401650   0.08711439 
+##   0.10842707   0.07370993   0.12430799 
 ## 
 ## $randomized_3
 ## randomized_1 randomized_2 randomized_3 
-##    0.1475781    0.1463635    0.1467653</code></pre>
+##   0.09054067   0.10166614   0.08375809</code></pre>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
